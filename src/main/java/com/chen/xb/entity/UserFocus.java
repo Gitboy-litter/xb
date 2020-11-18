@@ -1,8 +1,9 @@
 package com.chen.xb.entity;
 
+import javax.persistence.Table;
 import java.io.Serializable;
 
-
+@Table(name = "userfocus")
 public class UserFocus implements Serializable {
 
     private Long userId;

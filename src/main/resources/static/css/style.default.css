@@ -1211,7 +1211,7 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 *     USERS SECTION
 * ==========================================================
 */
-/* user block */
+/* login block */
 .user-block .avatar {
   display: block;
   width: 70px;
@@ -1278,7 +1278,7 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
   margin-top: 10px;
 }
 
-/* Public user Block */
+/* Public login Block */
 .public-user-block .avatar {
   min-width: 50px;
   max-width: 50px;

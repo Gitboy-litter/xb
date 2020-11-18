@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
 
 public class User implements Serializable {
@@ -180,33 +179,4 @@ public class User implements Serializable {
         this.deptId = deptId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(qqOpenid, user.qqOpenid) &&
-                Objects.equals(wxOpenid, user.wxOpenid) &&
-                Objects.equals(realName, user.realName) &&
-                Objects.equals(age, user.age) &&
-                Objects.equals(phone, user.phone) &&
-                Objects.equals(gender, user.gender) &&
-                Objects.equals(info, user.info) &&
-                Objects.equals(registerTime, user.registerTime) &&
-                Objects.equals(loginTime, user.loginTime) &&
-                Objects.equals(pic, user.pic) &&
-                Objects.equals(look, user.look) &&
-                Objects.equals(isSecret, user.isSecret) &&
-                Objects.equals(deptName, user.deptName) &&
-                Objects.equals(deptId, user.deptId);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username, password, email, qqOpenid, wxOpenid, realName, age, phone, gender, info, registerTime, loginTime, pic, look, isSecret, deptName, deptId);
-    }
 }
