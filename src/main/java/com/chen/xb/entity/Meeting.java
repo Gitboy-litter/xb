@@ -2,27 +2,39 @@ package com.chen.xb.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.apache.solr.client.solrj.beans.Field;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@SolrDocument(collection = "collection1")
 public class Meeting implements Serializable {
 
     @Id
+    @Field("id")
     private Long id;
+    @Field("dept_name")
     private String deptName;
+    @Field("dept_id")
     private Long deptId;
+    @Field
     private String title;
+    @Field
     private String content;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @Field("publish_date")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishDate;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")            // 响应前端json时,按此格式转换json
+    @Field("start_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date startTime;
-
+    @Field("end_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date endTime;
+    @Field
     private Long status;
+    @Field("make_user")
     private String makeUser;
 
 
