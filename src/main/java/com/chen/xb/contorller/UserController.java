@@ -7,10 +7,7 @@ import com.chen.xb.service.UserFocusService;
 import com.chen.xb.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -61,6 +58,15 @@ public class UserController {
 
     @RequestMapping(value = "deleteFocus/{id}", method = RequestMethod.DELETE)
     public Result deleteFocus(@PathVariable Long id, HttpSession session) {
+        User loginUser = (User) session.getAttribute("loginUser");
+        UserFocus userFocus = new UserFocus();
+        userFocus.setUserId(1L);
+        userFocus.setUserFocusId(id);
+        userFocusService.delete(userFocus);
+        return new Result(true, "取关成功");
+    }
+    @RequestMapping(value = "abc/{id}", method = RequestMethod.DELETE)
+    public Result abc(@PathVariable Long id, HttpSession session) {
         User loginUser = (User) session.getAttribute("loginUser");
         UserFocus userFocus = new UserFocus();
         userFocus.setUserId(1L);

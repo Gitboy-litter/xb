@@ -22,5 +22,6 @@ class XbApplicationTests {
     void test() {
         HighlightPage<Meeting> ab = meetingMapper.findByTitleAndStatus("关于", 1L, PageRequest.of(0, 5));
         System.out.println(ab);
+        System.out.println("abcd");
     }
 }
